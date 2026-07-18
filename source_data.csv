@@ -1,0 +1,5 @@
+customer_id,transaction_date,amount_usd,status_code
+101,07/15/2026,150.50,A
+102,07/16/2026,89.99,A
+103,07/17/2026,220.00,P
+104,,45.00,A

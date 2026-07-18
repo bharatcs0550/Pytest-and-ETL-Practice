@@ -1,0 +1,4 @@
+customer_id,transaction_date,amount_usd,status_description
+101,2026-07-15,150.50,Approved
+102,2026-07-16,89.99,Approved
+103,2026-07-17,220.00,Pending
