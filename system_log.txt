@@ -1,0 +1,9 @@
+2026-07-15 09:00:01 INFO Starting ETL job for customer batch
+2026-07-15 09:00:02 INFO Extracting source_data.csv - 4 records found
+2026-07-15 09:00:03 INFO Processing customer_id 101 - transformation successful
+2026-07-15 09:00:04 INFO Processing customer_id 102 - transformation successful
+2026-07-15 09:00:05 INFO Processing customer_id 103 - transformation successful
+2026-07-15 09:00:06 ERROR Processing customer_id 104 - transaction_date field is empty, validation failed
+2026-07-15 09:00:06 WARNING customer_id 104 skipped due to validation error
+2026-07-15 09:00:07 INFO Loading 3 records to destination
+2026-07-15 09:00:08 INFO ETL job completed with 1 warning
