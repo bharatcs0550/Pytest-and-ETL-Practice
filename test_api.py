@@ -1,4 +1,5 @@
 import requests
+import pytest
 
 def test_get_user_status_code():
     res = requests.get(" https://jsonplaceholder.typicode.com/users/2")
@@ -61,3 +62,39 @@ def test_update_resource_PATCH():
 def test_delete():
     res = requests.delete("https://jsonplaceholder.typicode.com/users/2")
     assert res.status_code == 200
+
+
+# Fixtures in API
+
+@pytest.fixture
+def baseURL():
+    return "https://jsonplaceholder.typicode.com"
+
+
+def test_API(baseURL):
+    res = requests.get(f"{baseURL}/users/2")
+    body =res.json()
+    assert res.status_code == 200
+
+@pytest.mark.parametrize("user_id",[1,2,3,4,5,6])
+
+
+def test_API_for_multiple_user(baseURL,user_id):
+    res = requests.get(f"{baseURL}/users/{user_id}")
+    assert res.status_code == 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
