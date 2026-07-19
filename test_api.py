@@ -83,6 +83,24 @@ def test_API_for_multiple_user(baseURL,user_id):
     res = requests.get(f"{baseURL}/users/{user_id}")
     assert res.status_code == 200
 
+# Query parameter
+def test_get_posts_by_user_query_param(baseURL):
+    response = requests.get(f"{baseURL}/posts", params={"userId": 2})
+    assert response.status_code == 200
+    
+    data = response.json()
+    for post in data:
+        assert post["userId"] == 2
+
+
+# Headers and Context
+def test_post_with_custom_headers(baseURL):
+    headers = {"Content-Type": "application/json"}
+    new_post = {"title": "Test Post", "body": "Testing headers", "userId": 1}
+    
+    response = requests.post(f"{baseURL}/posts", json=new_post, headers=headers)
+    assert response.status_code == 201
+
 
 
 
